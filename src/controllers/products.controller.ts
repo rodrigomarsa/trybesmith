@@ -5,6 +5,11 @@ import ProductService from '../services/products.service';
 class ProductsController {
   constructor(private productService = new ProductService()) { }
 
+  public getAll = async (_req: Request, res: Response) => {
+    const products = await this.productService.getAll();
+    return res.status(statusCodes.OK).json(products);
+  };
+
   public create = async (req: Request, res: Response) => {
     const product = req.body;
 
