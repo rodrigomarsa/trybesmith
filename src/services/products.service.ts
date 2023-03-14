@@ -2,7 +2,7 @@ import connection from '../models/connection';
 import ProductModel from '../models/product.model';
 import { IProduct } from '../interfaces';
 
-class ProductService {
+export default class ProductService {
   public model: ProductModel;
 
   constructor() {
@@ -14,9 +14,7 @@ class ProductService {
     return products;
   }
 
-  public create(product: IProduct): Promise<IProduct> {
+  public async create(product: IProduct): Promise<IProduct> {
     return this.model.create(product);
   }
 }
-
-export default ProductService;

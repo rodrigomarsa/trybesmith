@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import statusCodes from '../utils/statusCodes';
 import ProductService from '../services/products.service';
 
-class ProductsController {
+export default class ProductsController {
   constructor(private productService = new ProductService()) { }
 
   public getAll = async (_req: Request, res: Response) => {
@@ -17,5 +17,3 @@ class ProductsController {
     return res.status(statusCodes.CREATED).json(productCreated);
   };
 }
-
-export default ProductsController;
