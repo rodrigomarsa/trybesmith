@@ -13,7 +13,7 @@ export default function validateProductAmount(
   if (typeof amount !== 'string') {
     return res.status(statusCodes.INVALID_VALUE).json({ message: '"amount" must be a string' });
   }
-  if (amount.length < 2) {
+  if (amount.length < 3) {
     return res.status(statusCodes.INVALID_VALUE)
       .json({ message: '"amount" length must be at least 3 characters long' });
   }

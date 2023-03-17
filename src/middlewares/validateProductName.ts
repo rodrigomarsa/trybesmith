@@ -13,7 +13,7 @@ export default function validateProductName(
   if (typeof name !== 'string') {
     return res.status(statusCodes.INVALID_VALUE).json({ message: '"name" must be a string' });
   }
-  if (name.length < 2) {
+  if (name.length < 3) {
     return res.status(statusCodes.INVALID_VALUE)
       .json({ message: '"name" length must be at least 3 characters long' });
   }
